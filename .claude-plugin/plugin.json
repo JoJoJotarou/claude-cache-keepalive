@@ -1,0 +1,1 @@
+{"name": "cache-keepalive", "description": "Keeps the main thread's prompt cache warm while it waits or sits idle.", "version": "0.1.0", "author": {"name": "JoJoJotarou"}}

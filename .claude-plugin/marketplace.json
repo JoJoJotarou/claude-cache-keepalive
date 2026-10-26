@@ -1,0 +1,6 @@
+{
+  "name": "claude-cache-keepalive",
+  "description": "Keeps Claude Code's 1-hour prompt cache warm while idle.",
+  "owner": { "name": "JoJoJotarou" },
+  "plugins": [{ "name": "cache-keepalive", "source": "./" }]
+}
