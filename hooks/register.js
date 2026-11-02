@@ -141,7 +141,7 @@ export function register(on) {
 
   // Any other compaction of the main conversation (/compact, the threshold):
   // the cache it leaves behind is for the old transcript, so stop until the
-  // next real request.
+  // next real request. A precompute only drafts a summary and changes nothing.
   on('session.compact', async ($, e, next) => {
     if (e.agentId !== undefined) return next(e)
     state.compacting = true
@@ -149,7 +149,7 @@ export function register(on) {
       return await next(e)
     } finally {
       state.compacting = false
-      state.stopped = true
+      if (e.trigger !== 'precompute') state.stopped = true
     }
   })
 
