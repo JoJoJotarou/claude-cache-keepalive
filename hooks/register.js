@@ -103,7 +103,7 @@ async function tick($) {
     const u = r.usage ?? {}
     await log($, {
       event: 'ping', pings: state.pings, ms: Date.now() - now,
-      ok: r.isAnswered, reason: r.reason, status: r.status,
+      ok: r.isAnswered, reason: r.reason, status: r.status, error: r.error,
       cache_read: u.cache_read_input_tokens, cache_write: u.cache_creation_input_tokens,
       input: u.input_tokens, output: u.output_tokens,
     })
